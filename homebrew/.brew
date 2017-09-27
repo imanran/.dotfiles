@@ -1,0 +1,23 @@
+print_g (){
+  echo "\033[1;31m$1\033[0m"
+}
+
+SCRIPTPATH=$(cd "$(dirname "$0")"; pwd)
+
+print_g "Make sure we’re using the latest Homebrew"
+brew update
+
+print_g "Upgrade any already-installed formulae"
+brew upgrade
+
+print_g "Remove outdated versions from the cellar"
+brew cleanup
+
+print_g "Make sure Homebrew Bundle is available"
+brew tap Homebrew/bundle
+
+print_g "Run Brewfile"
+brew bundle --file=$SCRIPTPATH/Brewfile
+
+print_g "Run Caskfile"
+brew bundle --file=$SCRIPTPATH/Caskfile
