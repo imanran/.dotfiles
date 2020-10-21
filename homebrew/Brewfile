@@ -1,4 +1,33 @@
-tap "caskroom/cask"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "romkatv/powerlevel10k"
+tap "hashicorp/tap"
+cask_args appdir: "/Applications"
+
+
 brew "tree"
 brew "wget"
 brew "watch"
+brew "jq"
+brew "bat"
+
+# Zsh Config
+brew "zsh"
+brew "zsh-syntax-highlighting"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "autojump"
+brew "romkatv/powerlevel10k/powerlevel10k"
+
+
+# Work Tools
+cask "iterm2"
+cask "virtualbox"
+cask "vagrant"
+cask "visual-studio-code"
+brew "hashicorp/tap/terraform"
+
+# Misc
+cask "google-chrome"
+cask "spotify"
